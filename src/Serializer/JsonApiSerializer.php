@@ -150,7 +150,7 @@ class JsonApiSerializer extends ArraySerializer
      */
     public function includedData(ResourceInterface $resource, array $data): array
     {
-        list($serializedData, $linkedIds) = $this->pullOutNestedIncludedData($data);
+        [$serializedData, $linkedIds] = $this->pullOutNestedIncludedData($data);
 
         foreach ($data as $value) {
             foreach ($value as $includeObject) {
@@ -160,7 +160,7 @@ class JsonApiSerializer extends ArraySerializer
 
                 $includeObjects = $this->createIncludeObjects($includeObject);
 
-                list($serializedData, $linkedIds) = $this->serializeIncludedObjectsWithCacheKey(
+                [$serializedData, $linkedIds] = $this->serializeIncludedObjectsWithCacheKey(
                     $includeObjects,
                     $linkedIds,
                     $serializedData,
@@ -329,7 +329,7 @@ class JsonApiSerializer extends ArraySerializer
         foreach ($data as $value) {
             foreach ($value as $includeObject) {
                 if (isset($includeObject['included'])) {
-                    list($includedData, $linkedIds) = $this->serializeIncludedObjectsWithCacheKey(
+                    [$includedData, $linkedIds] = $this->serializeIncludedObjectsWithCacheKey(
                         $includeObject['included'],
                         $linkedIds,
                         $includedData,

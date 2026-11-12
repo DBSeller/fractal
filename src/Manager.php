@@ -127,9 +127,9 @@ class Manager
         }
 
         foreach ($includes as $include) {
-            list($includeName, $allModifiersStr) = array_pad(explode(':', $include, 2), 2, '');
+            [$includeName, $allModifiersStr] = array_pad(explode(':', $include, 2), 2, '');
             $a = $allModifiersStr ? explode('.', $allModifiersStr, 2) : [''];
-            list($allModifiersStr, $subRelations) = array_pad($a, 2, null);
+            [$allModifiersStr, $subRelations] = array_pad($a, 2, null);
 
             // Trim it down to a cool level of recursion
             $includeName = $this->trimToAcceptableRecursionLevel($includeName);

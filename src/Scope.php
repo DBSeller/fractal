@@ -170,7 +170,7 @@ class Scope implements \JsonSerializable
      */
     public function toArray(): ?array
     {
-        list($rawData, $rawIncludedData) = $this->executeResourceTransformers();
+        [$rawData, $rawIncludedData] = $this->executeResourceTransformers();
 
         $serializer = $this->manager->getSerializer();
 
@@ -293,10 +293,10 @@ class Scope implements \JsonSerializable
         $transformedData = $includedData = [];
 
         if ($this->resource instanceof Item) {
-            list($transformedData, $includedData[]) = $this->fireTransformer($transformer, $data);
+            [$transformedData, $includedData[]] = $this->fireTransformer($transformer, $data);
         } elseif ($this->resource instanceof Collection) {
             foreach ($data as $value) {
-                list($transformedData[], $includedData[]) = $this->fireTransformer($transformer, $value);
+                [$transformedData[], $includedData[]] = $this->fireTransformer($transformer, $value);
             }
         } elseif ($this->resource instanceof NullResource) {
             $transformedData = null;

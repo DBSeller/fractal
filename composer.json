@@ -1,5 +1,5 @@
 {
-    "name": "league/fractal",
+    "name": "dbseller/fractal",
     "description": "Handle the output of complex data structures ready for API output.",
     "keywords": [
         "league",
@@ -7,7 +7,7 @@
         "json",
         "rest"
     ],
-    "homepage": "http://fractal.thephpleague.com/",
+    "homepage": "https://github.com/DBSeller/fractal",
     "license": "MIT",
     "authors": [
         {
@@ -21,7 +21,7 @@
         "sort-packages": true
     },
     "require": {
-        "php": ">=7.4"
+        "php": "^7.4 || ^8.0 || ^8.1 || ^8.2 || ^8.3 || ^8.4 || ^8.5"
     },
     "require-dev": {
         "doctrine/orm": "^2.5",
@@ -59,5 +59,8 @@
         "branch-alias": {
             "dev-master": "0.20.x-dev"
         }
+    },
+    "replace": {
+        "league/fractal": "self.version"
     }
 }
