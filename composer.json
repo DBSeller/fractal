@@ -15,6 +15,10 @@
             "email": "me@philsturgeon.uk",
             "homepage": "http://philsturgeon.uk/",
             "role": "Developer"
+        },
+        {
+            "name": "Gabriel Morgado",
+            "email": "gabriel.morgado@dbseller.com.br"
         }
     ],
     "config": {
