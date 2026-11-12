@@ -62,5 +62,6 @@
     },
     "replace": {
         "league/fractal": "self.version"
-    }
+    },
+    "version": "0.21.1"
 }
